@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset=utf-8 />
+<title>Sock4</title>
+<link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body ng-controller="ctrl" ng-show="passworded">
+
+	<h2>Hey there</h2>
+
+	<hr/>
+
+	<ul>
+		<div data-dirty-list ng-repeat="entry in localLog" asset="{{entry.message}}"></div>
+	</ul>
+
+	<hr/>
+
+	<div id="bin">
+		<div data-screen send-picture="postPicture(message)"></div>
+		<input type="text" ng-model="inputtext"/><button ng-click="send()">send</button>
+	</div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/sugar/1.3.9/sugar.min.js"></script>
+	<script src="client.js"></script>
+</body>
+</html>
